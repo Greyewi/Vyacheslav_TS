@@ -6,7 +6,7 @@ let str: string = 'Hello! World!'
 
 //console.log(intNum, floatNum, intNum + floatNum, intNum + str)
 
-const isQuery: boolean = true
+const isQuery: object = {}
 const isData: boolean = false
 
 //console.log(Number(isQuery) + Number(isData))
@@ -48,5 +48,17 @@ enum State {
     STAND,
 }
 
-
 console.log(typeof Keys, Keys[0], Keys.q, Actions, State[33])
+
+
+const isNoAbsent: undefined = undefined
+let isNoAbsentVar: (undefined | null | boolean) = false
+
+isNoAbsentVar = null
+console.log(isNoAbsent, typeof isNoAbsentVar)
+
+let something: any
+
+something = 0
+console.log(isData + something)
+
