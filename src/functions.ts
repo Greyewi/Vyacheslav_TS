@@ -72,3 +72,59 @@ const man: IPerson = {
 
 man.setData(160, 40, "Vasya", "Petrov")
 console.log(man)
+
+
+interface IStyles {
+    [property: string]: string
+}
+
+const boxStyle: IStyles = {
+    margin: '4px',
+    padding: '5px',
+    textDecoration: 'underline',
+}
+
+function getSelectors(property: string, value: string): IStyles
+function getSelectors(property: string): string
+function getSelectors(): IStyles
+
+function getSelectors(property?: string, value?: string){
+    if(property && value) {
+        boxStyle[property] = value
+        return boxStyle
+    } else if(property && !value){
+        return boxStyle[property]
+    } else {
+        return boxStyle
+    }
+}
+
+// console.log(getSelectors())
+// console.log(getSelectors('color', 'blue'))
+// console.log(getSelectors('color'))
+
+const genArray: Array<string> = ["hello", "1"]
+
+function arrReverse<T>(array: T[]): T[] {
+    return array.reverse()
+}
+
+function arrJoin<T>(array: T[], modify?: string): string {
+    return array.join(modify)
+}
+
+interface ICar<T, A> {
+    cost: T,
+    price: T,
+    weight: A,
+    height: A
+}
+
+const car: ICar<number, string> = {
+    cost: 33,
+    price: 44,
+    weight:1,
+    height:4
+}
+
+console.log(car)
