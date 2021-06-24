@@ -8,7 +8,7 @@
   "dependencies": {
     "typescript": "^4.3.2"
   },
-  "scripts" : {
+  "scripts": {
     "start": "tsc src/*.ts && node src/functions.js"
   }
 }

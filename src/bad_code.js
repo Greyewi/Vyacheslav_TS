@@ -11,17 +11,21 @@ function shipWeight() {
 }
 function sendUpdates(emailAddr) {
     function sendEmail(addr) {
-        console.log("Shipping to " + addr + " via " + (deliveryMethod() || 'standard') + " delivery");
+        return ("Shipping to " + addr + " via " + (deliveryMethod() || 'standard') + " delivery");
         if (shipWeight() > 100) {
-            console.log('WARNING: Oversize package');
+            return ('WARNING: Oversize package');
         }
     }
     if (Array.isArray(emailAddr)) {
+        console.log(emailAddr);
         emailAddr.map(function (item, key) {
-            sendEmail(item.trim());
+            console.log(item);
+            return sendEmail(item.trim());
         });
     }
     else {
-        sendEmail(emailAddr.trim());
+        return sendEmail(emailAddr.trim());
     }
 }
+console.log(sendUpdates("123"));
+console.log(sendUpdates(["233", "322"]));
